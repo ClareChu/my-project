@@ -1,0 +1,11 @@
+version: "2"
+services:
+  51well-video:
+    image: 51well-video:latest
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "8083:8080"
+    command: "npm start"
+    restart: always
