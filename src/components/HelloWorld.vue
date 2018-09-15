@@ -1,9 +1,11 @@
 
 <template>
-  <div class="hello">
-    <div @click="clickFull()" class="full-screen">全屏</div>
-    <iframe :class="isFull?'full':''" id="ifr" src="http://yun.baiyug.cn/vip/index.php?url=http://www.iqiyi.com/v_19rr96agog.html"></iframe>    
-  </div>
+  <v-dialog>
+    <div class="hello">
+      <div @click="clickFull()" class="full-screen">全屏</div>
+      <iframe :class="isFull?'full':''" id="ifr" src="http://yun.baiyug.cn/vip/index.php?url=http://www.iqiyi.com/v_19rr96agog.html"></iframe>    
+    </div>
+  </v-dialog>  
 </template>
 
 
