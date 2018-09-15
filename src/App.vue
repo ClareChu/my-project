@@ -6,7 +6,13 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  created () {
+
+  },
+  methods:{
+    
+  }
 }
 </script>
 

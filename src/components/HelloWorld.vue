@@ -1,12 +1,11 @@
 
 <template>
-  <v-dialog>
+  
     <div class="hello">
-      <div @click="clickFull()" class="full-screen">全屏</div>
-      <iframe :class="isFull?'full':''" id="ifr" src="http://api.visaok.net/?url=https://www.iqiyi.com/v_19rrd2h7j0.html"></iframe>    
+      <iframe :class="isFull?'full':''" id="ifr" :src='vvurl'></iframe>    
     </div>
   
-  </v-dialog>  
+   
 </template>
 
 
@@ -15,14 +14,31 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      id:'',
+      vvurl: 'http://api.visaok.net/?url=https://www.iqiyi.com/v_19rqym70lc.html',
       msg: 'Welcome to Your Vue.js App',
       isFull:false
     }
+  },
+  created () {
+    let id = this.$route.query.id//id为key（根据实际情况）//
+    this.id = id
+    console.info("id", id==undefined)
+    if (id != undefined ){
+        this.getData()
+    }
+    
   },
   methods:{
     clickFull(){
       console.log('click')
       this.isFull = true
+    },
+    getData(){
+      console.log('xxx')
+      this.$http('login/test/' + this.id,'get',{}).then(res=>{
+        console.log(res)
+      })
     }
   }
 }
@@ -48,7 +64,7 @@ export default {
 }
 #ifr{
   width: 100%;
-  height: 200px;
+  height: 100%;
 }
 .full{
   width: 100%;

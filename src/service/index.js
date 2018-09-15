@@ -6,10 +6,7 @@ import router from '@/router'
 // const appId = 10001029;
 
 // const BASE_URL = window.location.origin
-const BASE_URL = process.env.NODE_ENV === 'development'
-  ? `${window.location.origin}/proxyApi`
-    // ? 'http://devcloud.vpclub.cn'
-    : window.location.origin;
+const BASE_URL = 'http://119.23.38.106/video';
 
 console.log(BASE_URL)
 
@@ -87,7 +84,8 @@ axios.interceptors.response.use(response => {
   return Promise.reject(error)
 })
 
-const httpServer = (url, method, data, baseURL) => {
+const httpServer = (url, method, data, baseURL = 'http://119.23.38.106/video') => {
+
   let apiUrl
   if(url.split('/').length == 3){//为了解决该接口动态变化的问题
     let [key1, key2, key3] = url.split('/');
