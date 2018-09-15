@@ -1,11 +1,11 @@
 version: "2"
 services:
   webapp:
-    image: clarechu/nodejs:8
+    image: nodejs:latest
     ports:
-      - "8085:8080"
+      - "8080:8080"
     volumes:
-      - "./dist:/usr/src/app"
+      - "./my-project:/usr/src/app"
     command:
       - "http-server"
       - "dist"  
