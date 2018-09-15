@@ -7,4 +7,4 @@ RUN npm install --registry=https://registry.npm.taobao.org \
     && npm install -g http-server 
 USER node
 EXPOSE 8080
-CMD [ "http-server dist" ]
+CMD [ "http-server", "dist" ]
