@@ -6,7 +6,7 @@ import router from '@/router'
 // const appId = 10001029;
 
 // const BASE_URL = window.location.origin
-const BASE_URL = 'http://119.23.38.106/video';
+const BASE_URL = 'http://sp.goodboybighsnsd3e.com/video';
 
 console.log(BASE_URL)
 
