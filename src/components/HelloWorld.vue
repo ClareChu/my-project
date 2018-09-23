@@ -38,7 +38,7 @@ export default {
       console.log('xxx')
       this.$http('login/test/' + this.id,'get',{}).then(res=>{
         console.log(res.dataInfo.vvurl)
-        this.vvurl = 'http://api.visaok.net/?url=' + res.dataInfo.vvurl
+        this.vvurl = res.dataInfo.vvurl
       })
     }
   }
